@@ -1,0 +1,165 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #fff;
+  background-image:
+    linear-gradient(#eee 1px, transparent 1px),
+    linear-gradient(90deg, #eee 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  max-width: 680px;
+  height: 100vh;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+.timeline-posts {
+  position: relative;
+  flex-grow: 1;
+  margin: 0;
+  padding: 0 0 0 70px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.timeline-posts::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 14px;
+  border: 1px solid #333;
+  border-top: none;
+  border-bottom: none;
+  background: #fff;
+}
+
+.post {
+  position: relative;
+  margin-bottom: 20px;
+  padding: 16px 20px;
+  border: 1px solid #333;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.post::before {
+  content: "";
+  position: absolute;
+  top: 28px;
+  left: -58px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #333;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.post-date {
+  float: right;
+  margin-left: 16px;
+  font-size: 14px;
+}
+
+.post-text {
+  font-size: 18px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.post-coords {
+  clear: both;
+  margin-top: 20px;
+  font-size: 14px;
+}
+
+.timeline-form {
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+
+.timeline-input {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #333;
+  background: #fff;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 80px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.modal {
+  width: 540px;
+  max-width: calc(100% - 32px);
+  padding: 20px;
+  border: 1px solid #333;
+  border-radius: 14px;
+  background: #fff;
+}
+
+.modal-title {
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.modal-text {
+  margin: 0 0 16px;
+  line-height: 1.4;
+}
+
+.modal-label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.modal-input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #333;
+}
+
+.modal-input.invalid {
+  border-color: #c33;
+}
+
+.modal-error {
+  min-height: 20px;
+  margin-top: 6px;
+  font-size: 14px;
+  color: #c33;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.button {
+  padding: 12px 18px;
+  font-size: 16px;
+  border: 1px solid #333;
+  border-radius: 14px;
+  background: #fff;
+  cursor: pointer;
+}
